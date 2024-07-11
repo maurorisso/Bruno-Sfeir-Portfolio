@@ -1,0 +1,28 @@
+---
+import Logo from "./Logo.astro";
+
+const links: Link[] = [
+  { name: "Home", href: "/" },
+  { name: "Bio", href: "/bio" },
+  { name: "Works", href: "/works" },
+  { name: "Contact", href: "/contact" },
+];
+---
+
+<div class="flex justify-between">
+  <Logo />
+  <nav class="flex gap-2">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class="hover:text-slate-400 transition-colors duration-200 ease-in-out
+    "
+        >
+          {" "}
+          {link.name}
+        </a>
+      ))
+    }
+  </nav>
+</div>
