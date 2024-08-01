@@ -1,0 +1,142 @@
+---
+import CollectionsPage from "../../../components/Works/CollectionsPage.astro";
+import Compartimientos from "../../../assets/Azul_Prusia/Compartimientos.jpg";
+import Composicion2021Azul from "../../../assets/Azul_Prusia/Composicion_2021_azul.jpg";
+import Composicion2021Gris from "../../../assets/Azul_Prusia/Composicion_2021_gris.jpg";
+import Composicion2023 from "../../../assets/Azul_Prusia/Composicion_2023.jpg";
+import ComposicionConBuho from "../../../assets/Azul_Prusia/Composicion_con_buho.jpg";
+import ComposicionConTriangulo from "../../../assets/Azul_Prusia/Composicion_con_triangulo.jpg";
+import ComposicionEnAzulPrusia from "../../../assets/Azul_Prusia/Composicion_en_azul_prusia.jpg";
+import ComposicionEnGrises from "../../../assets/Azul_Prusia/Composicion_en_grises.jpg";
+import DanzaEnElSilencio from "../../../assets/Azul_Prusia/Danza_en_el_silencio.jpg";
+import EscenarioImaginarioConFiguras from "../../../assets/Azul_Prusia/Escenario_imaginario_con_figuras.jpg";
+import EspaciosInterioresConDerviche from "../../../assets/Azul_Prusia/Espacios_interiores_con_derviche.jpg";
+import ExtranoEquilibrioBajoLasNubes from "../../../assets/Azul_Prusia/Extrano_equilibrio_bajo_las_nubes.jpg";
+import HombreSentadoBajoUnaPalmera from "../../../assets/Azul_Prusia/Hombre_sentado_bajo_una_palmera.jpg";
+import HurgandoEnElInterior from "../../../assets/Azul_Prusia/Hurgando_en_el_interior.jpg";
+import Interrelaciones2021 from "../../../assets/Azul_Prusia/Interrelaciones_2021.jpg";
+import LaPipaDeMiPadreYSuMensaje from "../../../assets/Azul_Prusia/La_pipa_de_mi_padre_y_su_mensaje.jpg";
+import Paisaje from "../../../assets/Azul_Prusia/Paisaje.jpg";
+import SinTitulo from "../../../assets/Azul_Prusia/Sin_titulo.jpg";
+import { type Painting } from "../../../../types/index";
+
+const Paintings: Painting[] = [
+  {
+    name: "Compartimientos",
+    year: 2021,
+    size: "108 x 129",
+    imageUrl: Compartimientos,
+  },
+  {
+    name: "Composición 2021 Azul",
+    year: 2021,
+    size: "135 x 193",
+    imageUrl: Composicion2021Azul,
+  },
+  {
+    name: "Composición 2021 Gris",
+    year: 2021,
+    size: "94 x 124",
+    imageUrl: Composicion2021Gris,
+  },
+  {
+    name: "Composición 2023",
+    year: 2023,
+    size: "95 x 125",
+    imageUrl: Composicion2023,
+  },
+  {
+    name: "Composición con Búho",
+    year: 2019,
+    size: "155 x 220",
+    imageUrl: ComposicionConBuho,
+  },
+  {
+    name: "Composición con Triángulo",
+    year: 2021,
+    size: "81 x 130",
+    imageUrl: ComposicionConTriangulo,
+  },
+  {
+    name: "Composición en Azul Prusia",
+    year: 2021,
+    size: "135 x 193",
+    imageUrl: ComposicionEnAzulPrusia,
+  },
+  {
+    name: "Composición en Grises",
+    year: 2021,
+    size: "69 x 57",
+    imageUrl: ComposicionEnGrises,
+  },
+  {
+    name: "Danza en el Silencio",
+    year: 2021,
+    size: "135 x 198",
+    imageUrl: DanzaEnElSilencio,
+  },
+  {
+    name: "Escenario Imaginario con Figuras",
+    year: 2022,
+    size: "69 x 57",
+    imageUrl: EscenarioImaginarioConFiguras,
+  },
+  {
+    name: "Espacios Interiores con Derviche",
+    year: 2021,
+    size: "64 x 80",
+    imageUrl: EspaciosInterioresConDerviche,
+  },
+  {
+    name: "Extraño Equilibrio Bajo las Nubes",
+    year: 2021,
+    size: "82 x 163",
+    imageUrl: ExtranoEquilibrioBajoLasNubes,
+  },
+  {
+    name: "Hombre Sentado Bajo una Palmera",
+    year: 2021,
+    size: "135 x 198",
+    imageUrl: HombreSentadoBajoUnaPalmera,
+  },
+  {
+    name: "Hurgando en el Interior",
+    year: 2022,
+    size: "135 x 198",
+    imageUrl: HurgandoEnElInterior,
+  },
+  {
+    name: "Interrelaciones 2021",
+    year: 2021,
+    size: "155 x 120",
+    imageUrl: Interrelaciones2021,
+  },
+  {
+    name: "La Pipa de mi Padre y su Mensaje",
+    year: 2021,
+    size: "113 x 84",
+    imageUrl: LaPipaDeMiPadreYSuMensaje,
+  },
+  {
+    name: "Paisaje",
+    year: 2022,
+    size: "117 x 52",
+    imageUrl: Paisaje,
+  },
+  {
+    name: "Sin Título",
+    year: 2021,
+    size: "113 x 84",
+    imageUrl: SinTitulo,
+  },
+];
+
+const description =
+  "Esta obra representa la colección de pinturas de Bruno Sfeir en tonos azul prusia.  Inspiradas en la naturaleza, la música y la experiencia humana.";
+---
+
+<CollectionsPage
+  paintingsList={Paintings}
+  title="Azul Prusia"
+  description={description}
+/>

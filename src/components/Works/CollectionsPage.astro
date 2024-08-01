@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PaintingItem from "./PaintingItem.astro";
+import PaintingsList from "./PaintingItem.astro";
+import { type Painting } from "../../../types/index";
+
+type Props = {
+  title: string;
+  paintingsList: Painting[];
+  description: string;
+};
+
+const { title, paintingsList, description } = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="flex flex-col items-center my-4">
+    <h1 class="text-xl font-semibold">{title}</h1>
+    <p>{description}</p>
+  </div>
+
+  <div class="items-center grid grid-cols-2 gap-8">
+    {paintingsList.map((painting) => <PaintingItem item={painting} />)}
+  </div>
+</Layout>

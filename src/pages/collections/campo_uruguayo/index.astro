@@ -1,0 +1,86 @@
+---
+import CollectionsPage from "../../../components/Works/CollectionsPage.astro";
+import ArreandoElGanado2023 from "../../../assets/Campo_Uruguayo/Arreando_el_ganado_2023.jpg";
+import CaballoArabe2023 from "../../../assets/Campo_Uruguayo/Caballo_arabe_2023.jpg";
+import Doma2023 from "../../../assets/Campo_Uruguayo/Doma_2023.jpg";
+import DosNovillos2023 from "../../../assets/Campo_Uruguayo/Dos_novillos_2023.jpg";
+import EscenaDeCampoSurreal2023 from "../../../assets/Campo_Uruguayo/Escena_de_campo_surreal_2023.jpg";
+import EscenaDeCampo2023 from "../../../assets/Campo_Uruguayo/Escena_de_campo_2023.jpg";
+import Novillito2023 from "../../../assets/Campo_Uruguayo/Novillito_2023.jpg";
+import RecorriendoElCampo12023 from "../../../assets/Campo_Uruguayo/Recorriendo_el_campo_1_2023.jpg";
+import RecorriendoElCampo2023 from "../../../assets/Campo_Uruguayo/Recorriendo_el_campo_2023.jpg";
+import ToroEnElCampo2023 from "../../../assets/Campo_Uruguayo/Toro_en_el_campo_2023.jpg";
+import { Painting } from "../../../../types/index";
+
+const Paintings: Painting[] = [
+  {
+    name: "Arreando el ganado",
+    year: 2023,
+    size: "225 x 154",
+    imageUrl: ArreandoElGanado2023,
+  },
+  {
+    name: "Caballo árabe",
+    year: 2023,
+    size: "94 x 108",
+    imageUrl: CaballoArabe2023,
+  },
+  {
+    name: "Doma",
+    year: 2023,
+    size: "94 x 108",
+    imageUrl: Doma2023,
+  },
+  {
+    name: "Dos novillos",
+    year: 2023,
+    size: "150 x 200",
+    imageUrl: DosNovillos2023,
+  },
+  {
+    name: "Escena de campo surreal",
+    year: 2023,
+    size: "149 x 203",
+    imageUrl: EscenaDeCampoSurreal2023,
+  },
+  {
+    name: "Escena de campo",
+    year: 2023,
+    size: "95 x 109",
+    imageUrl: EscenaDeCampo2023,
+  },
+  {
+    name: "Novillito",
+    year: 2023,
+    size: "95 x 109",
+    imageUrl: Novillito2023,
+  },
+  {
+    name: "Recorriendo el campo 1",
+    year: 2023,
+    size: "94 x 108",
+    imageUrl: RecorriendoElCampo12023,
+  },
+  {
+    name: "Recorriendo el campo",
+    year: 2023,
+    size: "94 x 108",
+    imageUrl: RecorriendoElCampo2023,
+  },
+  {
+    name: "Toro en el campo",
+    year: 2023,
+    size: "94 x 103",
+    imageUrl: ToroEnElCampo2023,
+  },
+];
+
+const description =
+  "Esta obra representa la colección de pinturas de Bruno Sfeir inspiradas en el campo uruguayo, capturando la esencia de la vida rural y su naturaleza dinámica.";
+---
+
+<CollectionsPage
+  paintingsList={Paintings}
+  title="El Campo Uruguayo"
+  description={description}
+/>
