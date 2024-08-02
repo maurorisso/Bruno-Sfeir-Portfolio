@@ -1,22 +1,18 @@
 ---
+import Composicion2023 from "../../../src/assets/Azul_Prusia/Composicion_2023.jpg";
 import Image from "astro/components/Image.astro";
-import CollectionsThumbnail from "./CollectionsThumbnail.astro";
 ---
 
-<div class="flex gap-4 mt-8 flex-col justify-center items-center">
-  <p>
-    Bruno Sfeir is a painter from uruguay who has been painting for over 20
-    years. He has a unique style that is a mix of abstract and realism. His work
-    is inspired by nature, music, and the human experience. Bruno's paintings
-    are vibrant and full of life, with bold colors and dynamic compositions.
-  </p>
+<div class="flex flex-col gap-10 mt-10 w-full justify-center items-center">
+  <div class="grid grid-cols-2 justify-center items-center">
+    <p class="w-4/5 mx-auto">
+      <span class="text-3xl font-semibold">Bruno Sfeir</span> is a painter from uruguay
+      who has been painting for over 20 years. He has a unique style that is a mix
+      of abstract and realism. His work is inspired by nature, music, and the human
+      experience. Bruno's paintings are vibrant and full of life, with bold colors
+      and dynamic compositions.
+    </p>
 
-  <Image
-    src="https://i0.wp.com/www.revistadearte.com/wp-content/uploads/2022/10/Bruno-Sefeir-junto-a-una-de-sus-obras.jpg?resize=640%2C457&ssl=1"
-    alt="Bruno Sfeir"
-    width={640}
-    height={457}
-  />
-
-  <CollectionsThumbnail />
+    <Image src={Composicion2023} alt="Bruno Sfeir" class="md:w-[650px]" />
+  </div>
 </div>

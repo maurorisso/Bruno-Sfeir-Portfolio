@@ -1,0 +1,33 @@
+---
+import Title from "../shared/Title.astro";
+---
+
+<div class="contact-form text-white bg-slate-800 w-full p-4">
+  <h2 class="text-center text-2xl font-semibold mb-4">Contact</h2>
+  <form action="" class="grid max-w-[30%] mx-auto gap-2">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="bg-transparent bottom-0 border-b-2 border-white focus:outline-none"
+    />
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="bg-transparent bottom-0 border-b-2 border-white focus:outline-none"
+    />
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      class="bg-transparent bottom-0 border-b-2 border-white focus:outline-none"
+    ></textarea>
+    <button
+      type="submit"
+      class="px-4 py-2 w-fit border border-white justify-self-end">Send</button
+    >
+  </form>
+</div>

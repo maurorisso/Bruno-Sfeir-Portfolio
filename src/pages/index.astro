@@ -1,8 +1,17 @@
 ---
-import Hero from "../components/Home/Hero.astro";
+import Image from "astro/components/Image.astro";
+import CollectionsThumbnail from "../components/Home/CollectionsThumbnail.astro";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Home/Hero.astro";
+import Quote from "../components/Home/Quote.astro";
+import Contact from "../components/Home/Contact.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <Hero />
+<Layout title="Bruno Sfeir">
+  <div class="flex flex-col gap-10 mt-10 w-full justify-center items-center">
+    <Hero />
+    <CollectionsThumbnail />
+    <Contact />
+    <Quote />
+  </div>
 </Layout>

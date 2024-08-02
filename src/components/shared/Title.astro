@@ -1,13 +1,13 @@
 ---
 interface Props {
   title: string;
-  subTitle: string;
+  subTitle?: string;
 }
 
 const { title, subTitle } = Astro.props;
 ---
 
 <div>
-  <h1 class="text-3xl font-semibold">{title}</h1>
+  <h1 class="text-3xl font-semibold font-inter">{title}</h1>
   <p>{subTitle}</p>
 </div>
