@@ -4,7 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 import "@fontsource/cormorant-garamond";
 import "@fontsource-variable/inter";
 
-import Header from "../components/shared/Header.astro";
+import Header from "../components/shared/NavBar.astro";
 
 interface Props {
   title: string;
@@ -26,12 +26,17 @@ const { title } = Astro.props;
   </head>
   <body class="flex flex-col h-screen font-serif">
     <Header />
-    <main class="flex-1 mx-auto">
+    <main class="flex-1 mx-auto py-8">
       <slot />
     </main>
 
     <Footer />
     <style is:global>
+      .wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
       :root {
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
@@ -44,10 +49,13 @@ const { title } = Astro.props;
         );
         font-size: 1.2rem;
       }
+      body {
+        font-family: "Cormorant Garamond", serif;
+      }
       html {
-        font-family: system-ui, sans-serif;
         background: #f0f0f0;
         background-size: 224px;
+        scroll-behavior: smooth;
       }
       code {
         font-family:
