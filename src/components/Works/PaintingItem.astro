@@ -10,7 +10,7 @@ const { item } = Astro.props;
 ---
 
 <div class="group">
-  <Image src={item.imageUrl} alt={item.name} />
+  <Image src={item.imageUrl} alt={item.name} loading="lazy" />
   <div class="text-lg">{item.name}</div>
 
   <div class="flex justify-between w-full mt-1">

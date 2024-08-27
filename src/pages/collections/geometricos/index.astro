@@ -1,0 +1,58 @@
+---
+import CollectionsPage from "../../../components/Works/CollectionsPage.astro";
+import Collage12022 from "../../../assets/Geometricos/Collage_1_2022.jpg";
+import Collage22022 from "../../../assets/Geometricos/Collage_2_2022.jpg";
+import Collage32022 from "../../../assets/Geometricos/Collage_3_2022.jpg";
+import Collage42022 from "../../../assets/Geometricos/Collage_4_2022.jpg";
+import Collage2021 from "../../../assets/Geometricos/Collage_5_2021.jpg";
+import Collage2022 from "../../../assets/Geometricos/Collage_6_2021.jpg";
+import { type Painting } from "../../../../types/index";
+
+const Paintings: Painting[] = [
+  {
+    name: "Collage 1",
+    year: 2022,
+    size: "24 x 35",
+    imageUrl: Collage12022,
+  },
+  {
+    name: "Collage 2",
+    year: 2022,
+    size: "24 x 35",
+    imageUrl: Collage22022,
+  },
+  {
+    name: "Collage 3",
+    year: 2022,
+    size: "24 x 35",
+    imageUrl: Collage32022,
+  },
+  {
+    name: "Collage 4",
+    year: 2022,
+    size: "24 x 35",
+    imageUrl: Collage42022,
+  },
+  {
+    name: "Collage",
+    year: 2021,
+    size: "24 x 32.5",
+    imageUrl: Collage2021,
+  },
+  {
+    name: "Collage",
+    year: 2022,
+    size: "19 x 25",
+    imageUrl: Collage2022,
+  },
+];
+
+const description =
+  "Esta colección de collages de pequeño formato utiliza recortes sobre papel y otros materiales, explorando formas geométricas en composiciones compactas y dinámicas.";
+---
+
+<CollectionsPage
+  paintingsList={Paintings}
+  title="Geométricos Nuevos Pequeño Formato"
+  description={description}
+/>

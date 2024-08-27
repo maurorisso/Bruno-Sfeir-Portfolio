@@ -1,0 +1,121 @@
+---
+import CollectionsPage from "../../../components/Works/CollectionsPage.astro";
+import ArmoniaYSencillez2016 from "../../../assets/Oleo_Pasteles/Armonia_y_sencillez_2016.jpg";
+import ElCaminoInterior2017 from "../../../assets/Oleo_Pasteles/El_camino_interior_2017.jpg";
+import ElEncuentro2019 from "../../../assets/Oleo_Pasteles/El_encuentro_2019.jpg";
+import Ensonacion2019 from "../../../assets/Oleo_Pasteles/Ensonacion_2019.jpg";
+import EntreDosMundos2006 from "../../../assets/Oleo_Pasteles/Entre_dos_mundos_2006.jpg";
+import EscenaDeLaIndia2009 from "../../../assets/Oleo_Pasteles/Escena_de_la_India_2009.jpg";
+import FiguraYArcadas2010 from "../../../assets/Oleo_Pasteles/Figura_y_arcadas_2010.jpg";
+import ImagenDeLaIndia2009 from "../../../assets/Oleo_Pasteles/Imagen_de_la_India_2009.jpg";
+import LaAmbiguedad2009 from "../../../assets/Oleo_Pasteles/La_ambiguedad_2009.jpg";
+import MujerAlCalorDeUnaLlama2018 from "../../../assets/Oleo_Pasteles/Mujer_al_calor_de_una_llama_2018.png";
+import MujerConPolleraCampana2019 from "../../../assets/Oleo_Pasteles/Mujer_con_pollera_campana_2019.png";
+import MujerMirandoATravesDeUnPortal2009 from "../../../assets/Oleo_Pasteles/Mujer_mirando_a_traves_de_un_portal_2009.jpg";
+import MujerSobreFondoAbstracto2009 from "../../../assets/Oleo_Pasteles/Mujer_sobre_fondo_abstracto_2009.jpg";
+import RetratoDeAlma2020 from "../../../assets/Oleo_Pasteles/Retrato_de_Alma_2020.jpg";
+import RetratoDeUnHindu2009 from "../../../assets/Oleo_Pasteles/Retrato_de_un_hindu_2009.jpg";
+import { type Painting } from "../../../../types/index";
+
+const Paintings: Painting[] = [
+  {
+    name: "Armonía y sencillez",
+    year: 2016,
+    size: "90 x 120",
+    imageUrl: ArmoniaYSencillez2016,
+  },
+  {
+    name: "El camino interior",
+    year: 2017,
+    size: "90 x 120",
+    imageUrl: ElCaminoInterior2017,
+  },
+  {
+    name: "El encuentro",
+    year: 2019,
+    size: "90 x 120",
+    imageUrl: ElEncuentro2019,
+  },
+  {
+    name: "Ensoñación",
+    year: 2019,
+    size: "90 x 120",
+    imageUrl: Ensonacion2019,
+  },
+  {
+    name: "Entre dos mundos",
+    year: 2006,
+    size: "116 x 144",
+    imageUrl: EntreDosMundos2006,
+  },
+  {
+    name: "Escena de la India",
+    year: 2009,
+    size: "120 x 140",
+    imageUrl: EscenaDeLaIndia2009,
+  },
+  {
+    name: "Figura y arcadas",
+    year: 2010,
+    size: "90 x 120",
+    imageUrl: FiguraYArcadas2010,
+  },
+  {
+    name: "Imagen de la India",
+    year: 2009,
+    size: "120 x 140",
+    imageUrl: ImagenDeLaIndia2009,
+  },
+  {
+    name: "La ambigüedad",
+    year: 2009,
+    size: "90 x 127",
+    imageUrl: LaAmbiguedad2009,
+  },
+  {
+    name: "Mujer al calor de una llama",
+    year: 2018,
+    size: "90 x 120",
+    imageUrl: MujerAlCalorDeUnaLlama2018,
+  },
+  {
+    name: "Mujer con pollera campana",
+    year: 2019,
+    size: "90 x 120",
+    imageUrl: MujerConPolleraCampana2019,
+  },
+  {
+    name: "Mujer mirando a través de un portal",
+    year: 2009,
+    size: "120 x 144",
+    imageUrl: MujerMirandoATravesDeUnPortal2009,
+  },
+  {
+    name: "Mujer sobre fondo abstracto",
+    year: 2009,
+    size: "90 x 127",
+    imageUrl: MujerSobreFondoAbstracto2009,
+  },
+  {
+    name: "Retrato de Alma",
+    year: 2020,
+    size: "80 x 60",
+    imageUrl: RetratoDeAlma2020,
+  },
+  {
+    name: "Retrato de un hindú",
+    year: 2009,
+    size: "120 x 140",
+    imageUrl: RetratoDeUnHindu2009,
+  },
+];
+
+const description =
+  "Esta colección de pinturas de Bruno Sfeir utiliza óleo pastel y cabroncillo sobre papel, disponibles para su visualización y compra.";
+---
+
+<CollectionsPage
+  paintingsList={Paintings}
+  title="Óleo Pasteles y Cabroncillo"
+  description={description}
+/>

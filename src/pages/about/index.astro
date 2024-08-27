@@ -1,0 +1,53 @@
+---
+import Title from "../../components/shared/Title.astro";
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Bruno from "@assets/Bruno.jpg";
+---
+
+<Layout title="About |  Bruno Sfeir">
+  <div class="wrapper grid place-content-center">
+    <div
+      class="mx-auto p-4 md:p-8 lg:p-12 text-lg text-justify leading-relaxed"
+    >
+      <div>
+        <div class="text-4xl">Bruno</div>
+        <div class="ml-4 text-5xl">Sfeir</div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10 justify-center items-center">
+        <div>
+          <p>
+            Bruno Sfeir estudió en la Escuela Nacional de Bellas Artes de
+            Montevideo Uruguay, posteriormente se forma con discípulos del
+            maestro Joaquín Torres García y en el Club de grabado de Montevideo.
+          </p>
+          <p>
+            Si bien su pintura toma elementos del constructivismo de Torres
+            García, su proximidad al movimiento surrealista es aún mayor. En su
+            obra, la intuición preside el movimiento revelando a cada paso una
+            iconografía peculiar que elude rápidas conclusiones.
+          </p>
+
+          <p>
+            Nos encontramos con un trabajo de carácter introspectivo que se
+            manifiesta a través de un viaje interior. Una búsqueda incansable
+            que despierta en el artista un interés por culturas milenarias de
+            enseñanza y espiritualidad.
+          </p>
+          En el año 2000 se traslada al Líbano, (país de origen de su abuelo paterno
+          y gran impulsor de su creatividad) y más tarde al Golfo Pérsico, Egipto
+          y Marruecos. Este es un punto de inflexión en la vida del pintor; pues
+          su obra se impregna de ese perfume oriental, un aroma que perdura hasta
+          en su más reciente producción.
+          <p>
+            Actualmente Sfeir reside en España donde continúa con su prolífica
+            producción.
+          </p>
+        </div>
+
+        <Image src={Bruno} alt="Bruno sfeir" />
+      </div>
+    </div>
+  </div>
+</Layout>

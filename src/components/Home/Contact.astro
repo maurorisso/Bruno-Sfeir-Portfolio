@@ -1,11 +1,15 @@
 ---
 import Title from "../shared/Title.astro";
+// No JavaScript imports or operations should be outside the script tag if they affect the DOM
 ---
 
-<div class="contact-form text-white bg-slate-800 w-full p-4" id="Contact">
+<div
+  class="contact-form text-white bg-slate-800 w-full p-4 min-h-40"
+  id="Contact"
+>
   <h2 class="text-center text-3xl font-semibold mb-4">Contact</h2>
   <form
-    action=""
+    id="contactForm"
     class="grid max-w-[80%] md:max-w-[50%] lg:max-w-[30%] mx-auto gap-2"
   >
     <label for="name">Name</label>
@@ -14,23 +18,82 @@ import Title from "../shared/Title.astro";
       id="name"
       name="name"
       class="bg-transparent bottom-0 border-b-2 border-white focus:outline-none"
+      required
     />
+
     <label for="email">Email</label>
     <input
       type="email"
       id="email"
       name="email"
       class="bg-transparent bottom-0 border-b-2 border-white focus:outline-none"
+      required
     />
+
     <label for="message">Message</label>
     <textarea
       id="message"
       name="message"
       class="bg-transparent bottom-0 border-b-2 border-white focus:outline-none"
-    ></textarea>
+      required></textarea>
+
     <button
       type="submit"
+      id="submitButton"
       class="px-4 py-2 w-fit border border-white justify-self-end">Send</button
     >
   </form>
+  <div id="responseMessage" class="hidden text-center mt-4 text-xl"></div>
 </div>
+
+<script type="module">
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      const form = event.target;
+      const formData = new FormData(form);
+      const url = "https://formsubmit.co/ajax/maurorissocee@gmail.com"; // Your FormSubmit URL
+
+      // Update button text and disable it to indicate processing
+      const submitButton = document.getElementById("submitButton");
+      submitButton.textContent = "Sending...";
+      submitButton.disabled = true;
+
+      fetch(url, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            document
+              .querySelector("#responseMessage")
+              .classList.remove("hidden");
+            document.querySelector("#responseMessage").innerHTML =
+              `Thanks <strong>${formData.get("name")}</strong>, your email has been sent to Bruno.`;
+            form.classList.add("hidden"); // Optionally hide form
+          } else {
+            document
+              .querySelector("#responseMessage")
+              .classList.remove("hidden");
+            document.querySelector("#responseMessage").textContent =
+              "An error occurred. Please try again.";
+          }
+          submitButton.disabled = false;
+          submitButton.textContent = "Send"; // Reset button text
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.querySelector("#responseMessage").classList.remove("hidden");
+          document.querySelector("#responseMessage").textContent =
+            "An error occurred. Please try again.";
+          submitButton.disabled = false;
+          submitButton.textContent = "Send"; // Reset button text
+        });
+    });
+</script>
