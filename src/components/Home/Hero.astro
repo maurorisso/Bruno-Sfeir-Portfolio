@@ -4,7 +4,7 @@ import Image from "astro/components/Image.astro";
 ---
 
 <div class="flex flex-col gap-10 mt-10 justify-center items-center wrapper">
-  <div class="grid grid-cols-2 justify-center items-center">
+  <div class="grid md:grid-cols-2 justify-center items-center">
     <p class="w-4/5 mx-auto">
       <span class="text-3xl font-semibold">Bruno Sfeir</span> is an Uruguayan-Lebanese
       painter based in Spain. Throughout his extensive career, he has created works
@@ -13,6 +13,10 @@ import Image from "astro/components/Image.astro";
       in meditation.
     </p>
 
-    <Image src={Composicion2023} alt="Bruno Sfeir" class="md:w-[650px]" />
+    <Image
+      src={Composicion2023}
+      alt="Bruno Sfeir"
+      class="md:w-[650px] hidden md:block"
+    />
   </div>
 </div>
