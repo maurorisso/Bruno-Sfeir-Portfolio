@@ -6,6 +6,7 @@ export default {
 			fontFamily: {
 				serif: ['Cormorant Garamond', 'sans-serif'],
 				inter: ['Inter Variable', 'sans-serif'],
+				zeyada: ['Zeyada', 'sans-serif'],
 			},
 		},
 	},

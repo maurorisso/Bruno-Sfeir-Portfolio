@@ -1,7 +1,7 @@
 ---
+// Import the required components and type definitions
 import Layout from "../../layouts/Layout.astro";
-import PaintingItem from "./PaintingItem.astro";
-import PaintingsList from "./PaintingItem.astro";
+import PaintingItem from "./PaintingItem.astro"; // Ensure this is the correct path
 import { type Painting } from "../../../types/index";
 
 type Props = {
@@ -14,15 +14,14 @@ const { title, paintingsList, description } = Astro.props;
 ---
 
 <Layout title={title}>
-  <div class="py-8">
+  <div class="p-4">
     <div class="flex flex-col items-center">
       <h1 class="text-3xl font-semibold">{title}</h1>
-      <p class="md:text-lg text-center p-2 mb-6">{description}</p>
+      <p class="md:text-lg text-center px-1 mb-6">{description}</p>
     </div>
 
-    <div
-      class="grid-cols-1 items-center grid md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto wrapper"
-    >
+    <!-- Using CSS grid to create a justified layout -->
+    <div class="columns-2 md:columns-3 gap-4 space-y-4">
       {paintingsList.map((painting) => <PaintingItem item={painting} />)}
     </div>
   </div>

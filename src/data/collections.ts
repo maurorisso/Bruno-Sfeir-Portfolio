@@ -6,25 +6,25 @@ import { type CollectionThumbnail } from "../../types/index";
 
 const collections: CollectionThumbnail[] = [
   {
-    name: "Azul Prusia",
-    url: "/collections/azul_prusia",
+    name: "Prussian blue",
+    url: "/collections/prussian_blue",
     thumbnail: Compartimientos,
   },
   {
-    name: "Campo Uruguayo",
-    url: "/collections/campo_uruguayo",
+    name: "Uruguayan countryside",
+    url: "/collections/uruguayan_countryside",
     thumbnail: ArreandoElGanado2023,
   },
   {
-    name: "Oleo Pastel",
-    url: "/collections/oleo_pastel",
+    name: "Oil Pastel",
+    url: "/collections/oil_pastel",
     thumbnail: Armonia,
   },
-  {
-    name: "Geometricos",
-    url: "/collections/geometricos",
-    thumbnail: Geometricos,
-  },
+  // {
+  //   name: "Geometricos",
+  //   url: "/collections/geometricos",
+  //   thumbnail: Geometricos,
+  // },
 ];
 
 export default collections;

@@ -3,21 +3,22 @@ import Logo from "./Logo.astro";
 import type { Link } from "../../../types/index";
 
 const links: Link[] = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Collections", href: "/collections" },
-  { name: "Press", href: "/press" },
+  { name: "Collections", href: "/#collections" },
+  // { name: "Press", href: "/press" },
   { name: "Contact", href: "/#Contact" },
 ];
 ---
 
-<div class="flex justify-between bg-slate-800 text-white p-4 sticky top-0">
+<div class="flex justify-between bg-slate-800 text-white p-4 sticky top-0 z-10">
   <Logo />
   <nav class="flex gap-2 justify-center items-center">
     {
       links.map((link) => (
         <a
           href={link.href}
-          class="hover:text-slate-400 transition-colors duration-200 ease-in-out "
+          class="hover:text-slate-400 transition-colors duration-200 ease-in-out text-sm font-inter"
         >
           {" "}
           {link.name}
