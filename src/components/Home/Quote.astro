@@ -10,7 +10,9 @@ interface Props {
 const { text, name, position } = Astro.props;
 ---
 
-<div class="text-xl text-center quote w-5/6 md:w-3/6 text-slate-800 py-20">
+<div
+  class="text-xl text-center quote w-5/6 md:w-3/6 text-slate-800 py:py-10 md:py-20"
+>
   <Separator />
 
   <p>{text}</p>
