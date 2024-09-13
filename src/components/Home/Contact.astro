@@ -76,7 +76,7 @@ import Title from "../shared/Title.astro";
               .classList.remove("hidden");
             document.querySelector("#responseMessage").innerHTML =
               `Thanks <strong>${formData.get("name")}</strong>, your email has been sent to Bruno.`;
-            form.classList.add("hidden"); // Optionally hide form
+            form.classList.add("hidden"); 
           } else {
             document
               .querySelector("#responseMessage")
