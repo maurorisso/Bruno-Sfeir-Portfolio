@@ -1,7 +1,8 @@
 import Compartimientos from "../assets/Azul_Prusia/Compartimientos.jpg";
 import ArreandoElGanado2023 from "../assets/Campo_Uruguayo/Arreando_el_ganado_2023.jpg";
 import Armonia from "../assets/Oleo_Pasteles/Armonia_y_sencillez_2016.jpg";
-import Geometricos from "../assets/Geometricos/Collage_6_2021.jpg";
+import ComposicionConCopa2018 from "../assets/Colorful_Expressions/composicion_con_copa_2018.jpg";
+import Identidad from "../assets/Colecciones_Privadas/buscando_su_identidad_uruguay.jpg";
 import { type CollectionThumbnail } from "../../types/index";
 
 const collections: CollectionThumbnail[] = [
@@ -20,6 +21,18 @@ const collections: CollectionThumbnail[] = [
     url: "/collections/oil_pastel",
     thumbnail: Armonia,
   },
+
+  {
+    name: "Private collection",
+    url: "/collections/private_collection",
+    thumbnail: Identidad,
+  },
+  {
+    name: "Colorful Expressions",
+    url: "/collections/colorful_expressions",
+    thumbnail: ComposicionConCopa2018,
+  },
+
   // {
   //   name: "Geometricos",
   //   url: "/collections/geometricos",

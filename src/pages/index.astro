@@ -5,13 +5,33 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Home/Hero.astro";
 import Quote from "../components/Home/Quote.astro";
 import Contact from "../components/Home/Contact.astro";
+import CarouselQuote from "@components/Home/CarouselQuote";
+import Separator from "@components/shared/Separator.astro";
+
+//  "Bruno's work has enormous depth and reflects a constant transition, where
+//     hints of nostalgia from South America, constructivism aesthetics, and the
+//     spirituality of ancient Middle Eastern cultures intertwine."
+
+// Enrique V. Iglesias
+
+// Former President of Inter-American Development Bank
 ---
 
 <Layout title="Bruno Sfeir">
-  <div class="flex flex-col gap-10 mt-10 w-full justify-center items-center">
+  <div class="flex flex-col gap-10 md:mt-10 w-full justify-center items-center">
     <Hero />
     <CollectionsThumbnail />
+    <Quote
+      text="Bruno's work has enormous depth and reflects a constant transition, where hints of nostalgia from South America, constructivism aesthetics, and the spirituality of ancient Middle Eastern cultures intertwine."
+      name="Enrique V. Iglesias"
+      position="Former President of Inter-American Development Bank"
+    />
     <Contact />
-    <Quote />
+
+    <Quote
+      text="“Bruno Sfeir is abandoning himself to inner introspective currents of spirituality and perception and putting it on canvas so others can enjoy his paintings and be prodded into widening the horizons of their perception.” "
+      name="Samera AlRayes"
+      position=" Director/Chairman of the Board at American International School Kuwait"
+    />
   </div>
 </Layout>

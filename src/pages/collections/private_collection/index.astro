@@ -1,0 +1,170 @@
+---
+import CollectionsPage from "../../../components/Works/CollectionsPage.astro";
+import AcrilicOnCanvas from "../../../assets/Colecciones_Privadas/acrilic_on_canvas.jpg";
+import AnteLasPuertasBuenosAires from "../../../assets/Colecciones_Privadas/ante_las_puertas_buenos_aires.jpg";
+import BalanceUruguay from "../../../assets/Colecciones_Privadas/balance_uruguay.jpg";
+import BuscandoSuIdentidadUruguay from "../../../assets/Colecciones_Privadas/buscando_su_identidad_uruguay.jpg";
+import CarboncilloSobrePapelBeirut2009 from "../../../assets/Colecciones_Privadas/carboncillo_sobre_papel_beirut_2009.jpg";
+import ColeccionPrivadaUruguay2005 from "../../../assets/Colecciones_Privadas/coleccion_privada_uruguay_2005.jpg";
+import ComposicionBeirut from "../../../assets/Colecciones_Privadas/composicion_beirut.jpg";
+import ConstruccionMentalAbuDabi from "../../../assets/Colecciones_Privadas/construccion_mental_abu_dabi.jpg";
+import ElSonadorBeirut from "../../../assets/Colecciones_Privadas/el_sonador_beirut.jpg";
+import EnElSenderoBeirut2008 from "../../../assets/Colecciones_Privadas/en_el_sendero_beirut_2008.png";
+import LaCasaDelSilencioEspana from "../../../assets/Colecciones_Privadas/la_casa_del_silencio_espana.jpg";
+import LaCopaUruguay2005 from "../../../assets/Colecciones_Privadas/la_copa_uruguay_2005.jpg";
+import LaPuertaSutilKuwait from "../../../assets/Colecciones_Privadas/la_puerta_sutil_kuwait.jpg";
+import MovimientosBeirut from "../../../assets/Colecciones_Privadas/movimientos_beirut.jpg";
+import ObservadoresYObservadosBeirut from "../../../assets/Colecciones_Privadas/observadores_y_observados_beirut.jpg";
+import PremioBancoRepublicaUruguay1992 from "../../../assets/Colecciones_Privadas/premio_banco_republica_oriental_uruguay_1992.jpg";
+import PremioMinisterioTurismo1997 from "../../../assets/Colecciones_Privadas/premio_ministerio_turismo_1997.jpg";
+import RetratoDeDianaBeirut from "../../../assets/Colecciones_Privadas/retrato_de_diana_beirut.jpg";
+import SaliendoDelTunelEcuador from "../../../assets/Colecciones_Privadas/saliendo_del_tunel_ecuador.jpg";
+import SinTituloBrasil from "../../../assets/Colecciones_Privadas/sin_titulo_brasil.jpg";
+import SinTituloKuwait from "../../../assets/Colecciones_Privadas/sin_titulo_kuwait.jpg";
+import SinTituloUruguay2005 from "../../../assets/Colecciones_Privadas/sin_titulo_uruguay_2005.jpg";
+import { type Painting } from "../../../../types/index";
+
+const Paintings: Painting[] = [
+  {
+    name: "Acrilic on canvas",
+    year: 1,
+    size: "132.50 x 95.50",
+    imageUrl: AcrilicOnCanvas,
+  },
+  {
+    name: "Ante las puertas de su corazón - Buenos Aires",
+    year: 2009,
+    size: "120 x 144",
+    imageUrl: AnteLasPuertasBuenosAires,
+  },
+  {
+    name: "Balance - Uruguay",
+    year: 2005,
+    size: "120 x 144",
+    imageUrl: BalanceUruguay,
+  },
+  {
+    name: "Buscando su identidad - Uruguay",
+    year: 2005,
+    size: "120 x 140",
+    imageUrl: BuscandoSuIdentidadUruguay,
+  },
+  {
+    name: "Carboncillo sobre papel - Beirut",
+    year: 2009,
+    size: "120 x 140",
+    imageUrl: CarboncilloSobrePapelBeirut2009,
+  },
+  {
+    name: "Colección Privada - Uruguay",
+    year: 2005,
+    size: "120 x 144",
+    imageUrl: ColeccionPrivadaUruguay2005,
+  },
+  {
+    name: "Composición - Beirut",
+    year: 2017,
+    size: "117 x 200",
+    imageUrl: ComposicionBeirut,
+  },
+  {
+    name: "Construcción mental de una ciudad imaginaria - Abu Dabi",
+    year: 2021,
+    size: "136 x 120",
+    imageUrl: ConstruccionMentalAbuDabi,
+  },
+  {
+    name: "El soñador - Beirut",
+    year: 2005,
+    size: "120 x 144",
+    imageUrl: ElSonadorBeirut,
+  },
+  {
+    name: "En el sendero - Beirut",
+    year: 2008,
+    size: "120 x 140",
+    imageUrl: EnElSenderoBeirut2008,
+  },
+  {
+    name: "La casa del silencio - España",
+    year: 2015,
+    size: "120 x 144",
+    imageUrl: LaCasaDelSilencioEspana,
+  },
+  {
+    name: "La copa - Uruguay",
+    year: 2005,
+    size: "120 x 144",
+    imageUrl: LaCopaUruguay2005,
+  },
+  {
+    name: "La puerta sutil - Kuwait",
+    year: 2006,
+    size: "120 x 140",
+    imageUrl: LaPuertaSutilKuwait,
+  },
+  {
+    name: "Movimientos - Beirut",
+    year: 2015,
+    size: "150 x 200",
+    imageUrl: MovimientosBeirut,
+  },
+  {
+    name: "Observadores y observados - Beirut",
+    year: 2015,
+    size: "120 x 140",
+    imageUrl: ObservadoresYObservadosBeirut,
+  },
+  {
+    name: "Premio Banco de la República Oriental del Uruguay",
+    year: 1992,
+    size: "",
+    imageUrl: PremioBancoRepublicaUruguay1992,
+  },
+  {
+    name: "Premio Ministerio de Turismo",
+    year: 1997,
+    size: "",
+    imageUrl: PremioMinisterioTurismo1997,
+  },
+  {
+    name: "Retrato de Diana - Beirut",
+    year: 2016,
+    size: "120 x 144",
+    imageUrl: RetratoDeDianaBeirut,
+  },
+  {
+    name: "Saliendo del túnel - Ecuador",
+    year: 2003,
+    size: "90 x 120",
+    imageUrl: SaliendoDelTunelEcuador,
+  },
+  {
+    name: "Sin título - Brasil",
+    year: 2005,
+    size: "120 x 144",
+    imageUrl: SinTituloBrasil,
+  },
+  {
+    name: "Sin título - Kuwait",
+    year: 1,
+    size: "120 x 144",
+    imageUrl: SinTituloKuwait,
+  },
+  {
+    name: "Sin título - Uruguay",
+    year: 2005,
+    size: "120 x 144",
+    imageUrl: SinTituloUruguay2005,
+  },
+];
+
+const description =
+  "Private Collection paintings are not available for sale. They are part of the artist's personal collection.";
+---
+
+<CollectionsPage
+  paintingsList={Paintings}
+  title="Private Collection"
+  description={description}
+/>

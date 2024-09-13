@@ -1,0 +1,107 @@
+---
+import CollectionsPage from "@components/Works/CollectionsPage.astro";
+import { type Painting } from "../../../../types/index";
+import Abstracto2017 from "../../../assets/Colorful_Expressions/abstracto_2017.jpg";
+import Abstracto2022 from "../../../assets/Colorful_Expressions/abstracto_2022.jpg";
+import ComposicionConArcadas2013 from "../../../assets/Colorful_Expressions/composicion_con_arcadas_2013.jpg";
+import ComposicionConCopa2018 from "../../../assets/Colorful_Expressions/composicion_con_copa_2018.jpg";
+import DesdeLaCiudadAzul2013 from "../../../assets/Colorful_Expressions/desde_la_ciudad_azul_2013.jpg";
+import ElViajeHaciaElTemplo2012 from "../../../assets/Colorful_Expressions/el_viaje_hacia_el_templo_2012.jpg";
+import EscenaEnigmaticaBajoUnaColina2019 from "../../../assets/Colorful_Expressions/escena_enigmatica_bajo_una_colina_2019.jpg";
+import FormasSugerentes2021 from "../../../assets/Colorful_Expressions/formas_sugerentes_2021.jpg";
+import Laberinto2021 from "../../../assets/Colorful_Expressions/laberinto_2021.jpg";
+import MirandoHaciaUnCentroDeLuz2022 from "../../../assets/Colorful_Expressions/mirando_hacia_un_centro_de_luz_2022.jpg";
+import MomentosDeInquietud2019 from "../../../assets/Colorful_Expressions/momentos_de_inquietud_2019.jpg";
+import Movimientos2021 from "../../../assets/Colorful_Expressions/movimientos_2021.jpg";
+import SuperposicionDePlanos2021 from "../../../assets/Colorful_Expressions/superposicion_de_planos_2021.jpg";
+
+const Paintings: Painting[] = [
+  {
+    name: "Abstracto",
+    year: 2017,
+    size: "64 x 81",
+    imageUrl: Abstracto2017,
+  },
+  {
+    name: "Abstracto",
+    year: 2022,
+    size: "55 x 76",
+    imageUrl: Abstracto2022,
+  },
+  {
+    name: "Composición con arcadas",
+    year: 2013,
+    size: "81 x 100",
+    imageUrl: ComposicionConArcadas2013,
+  },
+  {
+    name: "Composición con copa",
+    year: 2018,
+    size: "113 x 84",
+    imageUrl: ComposicionConCopa2018,
+  },
+  {
+    name: "Desde la ciudad azul",
+    year: 2013,
+    size: "60 x 80",
+    imageUrl: DesdeLaCiudadAzul2013,
+  },
+  {
+    name: "El viaje hacia el templo",
+    year: 2012,
+    size: "89 x 116",
+    imageUrl: ElViajeHaciaElTemplo2012,
+  },
+  {
+    name: "Escena enigmática bajo una colina",
+    year: 2019,
+    size: "82 x 163",
+    imageUrl: EscenaEnigmaticaBajoUnaColina2019,
+  },
+  {
+    name: "Formas sugerentes",
+    year: 2021,
+    size: "96 x 125",
+    imageUrl: FormasSugerentes2021,
+  },
+  {
+    name: "Laberinto",
+    year: 2021,
+    size: "155 x 220",
+    imageUrl: Laberinto2021,
+  },
+  {
+    name: "Mirando hacia un centro de luz",
+    year: 2022,
+    size: "89 x 116",
+    imageUrl: MirandoHaciaUnCentroDeLuz2022,
+  },
+  {
+    name: "Momentos de inquietud",
+    year: 2019,
+    size: "85 x 132.5",
+    imageUrl: MomentosDeInquietud2019,
+  },
+  {
+    name: "Movimientos",
+    year: 2021,
+    size: "155 x 120",
+    imageUrl: Movimientos2021,
+  },
+  {
+    name: "Superposición de planos sobre fondo gris",
+    year: 2021,
+    size: "155 x 200",
+    imageUrl: SuperposicionDePlanos2021,
+  },
+];
+
+const description =
+  "This collection showcases paintings filled with vibrant colors and dynamic compositions, expressing a wide range of emotions through the artist's use of color and texture.";
+---
+
+<CollectionsPage
+  paintingsList={Paintings}
+  title="Colorful Expressions"
+  description={description}
+/>
