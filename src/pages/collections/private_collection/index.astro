@@ -26,12 +26,6 @@ import { type Painting } from "../../../../types/index";
 
 const Paintings: Painting[] = [
   {
-    name: "Acrilic on canvas",
-    year: 1,
-    size: "132.50 x 95.50",
-    imageUrl: AcrilicOnCanvas,
-  },
-  {
     name: "Ante las puertas de su corazón - Buenos Aires",
     year: 2009,
     size: "120 x 144",
@@ -147,7 +141,7 @@ const Paintings: Painting[] = [
   },
   {
     name: "Sin título - Kuwait",
-    year: 1,
+    year: 2009,
     size: "120 x 144",
     imageUrl: SinTituloKuwait,
   },
@@ -160,11 +154,11 @@ const Paintings: Painting[] = [
 ];
 
 const description =
-  "Private Collection paintings are not available for sale. They are part of the artist's personal collection.";
+  "Private Collection paintings are not available for sale. They are part of exclusive personal collections owned by collectors around the world. This collection also highlights several award-winning works that have been recognized for their artistic excellence.";
 ---
 
 <CollectionsPage
   paintingsList={Paintings}
-  title="Private Collection"
+  title="Private Collection and Award-Winning Works"
   description={description}
 />
