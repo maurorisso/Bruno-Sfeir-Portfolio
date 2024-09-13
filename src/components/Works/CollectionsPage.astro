@@ -16,12 +16,12 @@ const { title, paintingsList, description } = Astro.props;
 <Layout title={title}>
   <div class="p-4">
     <div class="flex flex-col items-center">
-      <h1 class="text-3xl font-semibold">{title}</h1>
+      <h1 class="text-3xl font-semibold text-center">{title}</h1>
       <p class="md:text-lg text-center px-1 mb-6">{description}</p>
     </div>
 
     <!-- Using CSS grid to create a justified layout -->
-    <div class="columns-2 md:columns-3 gap-4 space-y-4">
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
       {paintingsList.map((painting) => <PaintingItem item={painting} />)}
     </div>
   </div>
