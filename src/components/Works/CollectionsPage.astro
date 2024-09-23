@@ -31,7 +31,7 @@ const { title, paintingsList, description } = Astro.props;
     </div>
   </div>
 
-  <script>
+  <script is:inline>
     const toggleItems = document.querySelectorAll(".toggle");
     const modal = document.getElementById("modal");
     const closeModal = document.getElementById("close-modal");
@@ -42,13 +42,13 @@ const { title, paintingsList, description } = Astro.props;
     const mobileBreakpoint = 425;
 
     // Function to check if the screen is larger than mobileBreakpoint
-    function isDesktop(): boolean {
+    function isDesktop() {
       return window.innerWidth > mobileBreakpoint;
     }
 
     // Open modal and set correct image when clicking the image
     toggleItems.forEach((item) => {
-      if (isDesktop()) {
+      if (!isDesktop()) {
         return;
       }
 
@@ -82,8 +82,7 @@ const { title, paintingsList, description } = Astro.props;
       document.body.style.overflow = "auto"; // Re-enable background scrolling
     });
 
-    // Optionally close modal when clicking outside the image
-    modal?.addEventListener("click", (event) => {
+    modal.addEventListener("click", (event) => {
       if (event.target === modal) {
         modal.classList.add("hidden");
         document.body.style.overflow = "auto"; // Re-enable background scrolling
