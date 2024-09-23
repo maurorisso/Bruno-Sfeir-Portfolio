@@ -39,12 +39,15 @@ const { item } = Astro.props;
   class="modal hidden !mt-0 fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
 >
   <div class="relative">
+    <div id="modal-spinner" class="modal-spinner"></div>
+
     <!-- Dynamically updated enlarged image -->
     <Image
       id="modal-img"
       src={item.imageUrl}
       alt="Enlarged Image"
-      class="max-h-[80vh] w-fit cursor-pointer object-contain"
+      onload="document.getElementById('modal-spinner').classList.add('hide');"
+      class="max-h-[80vh] w-fit cursor-pointer object-contain mx-auto"
     />
     <div
       class="flex text-white gap-2 w-full justify-center items-center mt-2 text-xl"
@@ -84,3 +87,36 @@ const { item } = Astro.props;
     }
   });
 </script>
+
+<style>
+  /* Spinner for loading feedback */
+  .modal-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Light white transparent */
+    border-top: 4px solid #fff; /* Solid white */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    transition: opacity 0.3s ease-out;
+    opacity: 1;
+  }
+
+  .modal-spinner.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Spinner animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
