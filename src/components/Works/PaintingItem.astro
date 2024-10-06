@@ -47,7 +47,7 @@ const { item } = Astro.props;
       src={item.imageUrl}
       alt="Enlarged Image"
       onload="document.getElementById('modal-spinner').classList.add('hide');"
-      class="max-h-[80vh] w-fit cursor-pointer object-contain mx-auto"
+      class="max-h-[80vh] w-fit cursor-pointer object-contain mx-auto transition-all ease-out duration-300"
     />
     <div
       class="flex text-white gap-2 w-full justify-center items-center mt-2 text-xl"

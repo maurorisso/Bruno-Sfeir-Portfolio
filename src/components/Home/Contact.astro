@@ -1,8 +1,3 @@
----
-import Title from "../shared/Title.astro";
-// No JavaScript imports or operations should be outside the script tag if they affect the DOM
----
-
 <div
   class="contact-form text-white bg-slate-800 w-full p-4 min-h-40"
   id="contact"
@@ -76,13 +71,13 @@ import Title from "../shared/Title.astro";
               .classList.remove("hidden");
             document.querySelector("#responseMessage").innerHTML =
               `Thanks <strong>${formData.get("name")}</strong>, your email has been sent to Bruno.`;
-            form.classList.add("hidden"); 
+            form.classList.add("hidden");
           } else {
             document
               .querySelector("#responseMessage")
               .classList.remove("hidden");
             document.querySelector("#responseMessage").textContent =
-              "An error occurred. Please try again.";
+              "An error occurred. Please contact Bruno directly at contact@brunosfeir.com";
           }
           submitButton.disabled = false;
           submitButton.textContent = "Send"; // Reset button text
@@ -91,7 +86,7 @@ import Title from "../shared/Title.astro";
           console.error("Error:", error);
           document.querySelector("#responseMessage").classList.remove("hidden");
           document.querySelector("#responseMessage").textContent =
-            "An error occurred. Please try again.";
+            "An error occurred. Please contact Bruno directly at contact@brunosfeir.com";
           submitButton.disabled = false;
           submitButton.textContent = "Send"; // Reset button text
         });
