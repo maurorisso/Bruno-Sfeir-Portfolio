@@ -5,6 +5,7 @@
   <h2 class="text-center text-3xl font-semibold mb-4">Contact</h2>
   <form
     id="contactForm"
+    action="f1cb7d77b0366183b8e7928872c9f310"
     class="grid max-w-[80%] md:max-w-[50%] lg:max-w-[30%] mx-auto gap-2"
   >
     <label for="name">Name</label>
@@ -66,29 +67,48 @@
         .then((response) => response.json())
         .then((data) => {
           if (data.success) {
-            document
-              .querySelector("#responseMessage")
-              .classList.remove("hidden");
-            document.querySelector("#responseMessage").innerHTML =
-              `Thanks <strong>${formData.get("name")}</strong>, your email has been sent to Bruno.`;
+            showResponseMessage(
+              `Thanks <strong>${formData.get("name")}</strong>, your email has been sent to Bruno.`,
+              true
+            );
             form.classList.add("hidden");
           } else {
-            document
-              .querySelector("#responseMessage")
-              .classList.remove("hidden");
-            document.querySelector("#responseMessage").textContent =
-              "An error occurred. Please contact Bruno directly at contact@brunosfeir.com";
+            showResponseMessage(
+              "An error occurred. Please contact Bruno directly at contact@brunosfeir.com",
+              false
+            );
           }
-          submitButton.disabled = false;
-          submitButton.textContent = "Send"; // Reset button text
+          resetButton();
         })
         .catch((error) => {
           console.error("Error:", error);
-          document.querySelector("#responseMessage").classList.remove("hidden");
-          document.querySelector("#responseMessage").textContent =
-            "An error occurred. Please contact Bruno directly at contact@brunosfeir.com";
-          submitButton.disabled = false;
-          submitButton.textContent = "Send"; // Reset button text
+          showResponseMessage(
+            "An error occurred. Please contact Bruno directly at contact@brunosfeir.com",
+            false
+          );
+          resetButton();
         });
+
+      // Optional timeout for quick feedback if the response is slow
+      setTimeout(() => {
+        if (submitButton.disabled) {
+          showResponseMessage(
+            "We are processing your request. This may take a few moments.",
+            false
+          );
+        }
+      }, 3000);
     });
+
+  function showResponseMessage(message, success) {
+    const responseMessage = document.querySelector("#responseMessage");
+    responseMessage.classList.remove("hidden");
+    responseMessage.innerHTML = message;
+  }
+
+  function resetButton() {
+    const submitButton = document.getElementById("submitButton");
+    submitButton.disabled = false;
+    submitButton.textContent = "Send"; // Reset button text
+  }
 </script>
