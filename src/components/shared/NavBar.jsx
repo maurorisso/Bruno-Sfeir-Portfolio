@@ -5,6 +5,7 @@ const links = [
   { name: "About", href: "/about" },
   { name: "Collections", href: "/#collections" },
   { name: "Contact", href: "/#contact" },
+  { name: "CV", href: "/cv" },
 ];
 
 const NavBar = () => {
@@ -15,13 +16,16 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex justify-between bg-slate-800 text-white p-4 sticky top-0 z-10">
-      <a href="/" class="cursor-pointer text-3xl font-semibold">
+    <div className="flex justify-between bg-slate-800/95 backdrop-blur-sm text-white p-4 sticky top-0 z-10 border-b border-slate-700">
+      <a
+        href="/"
+        className="cursor-pointer text-3xl font-semibold tracking-wide hover:text-slate-200 transition-colors"
+      >
         Bruno Sfeir
       </a>
-      {/* Burger Icon (Visible on Mobile) */}
+
       <button
-        className="md:hidden block focus:outline-none"
+        className="md:hidden block focus:outline-none hover:text-slate-300 transition-colors"
         onClick={toggleMenu}
       >
         <svg
@@ -40,30 +44,34 @@ const NavBar = () => {
         </svg>
       </button>
 
-      {/* Navigation Links */}
       <nav
         className={`${
           isOpen ? "block" : "hidden"
-        } md:flex flex-col md:flex-row md:items-center absolute md:relative right-0 top-12 md:top-auto md:right-auto bg-slate-800 md:bg-transparent p-2 z-20`}
+        } md:flex flex-col md:flex-row md:items-center absolute md:relative right-0 top-14 md:top-auto md:right-auto bg-slate-800 md:bg-transparent p-2 z-20 w-full md:w-auto border-b border-slate-700 md:border-none`}
       >
         {links.map((link, index) => (
           <a
             key={index}
             href={link.href}
             className="
-              hover:text-slate-400
+              hover:text-slate-300
               text-center 
               transition-colors
               duration-200
               ease-in-out
               text-sm
-             p-2
-             md:py-0
-             mde:px-2
-              font-inter
+              p-3
+              md:py-1
+              md:px-4
+              font-medium
+              tracking-wide
               block
-              md:text-left
-              md:inline"
+              md:inline
+              border-b
+              border-transparent
+              hover:border-slate-300
+              md:hover:border-transparent
+            "
           >
             {link.name}
           </a>

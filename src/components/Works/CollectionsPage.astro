@@ -31,70 +31,79 @@ const { title, paintingsList, description } = Astro.props;
     </div>
   </div>
 
-  <script is:inline>
-    const toggleItems = document.querySelectorAll(".toggle");
-    const modal = document.getElementById("modal");
-    const closeModal = document.getElementById("close-modal");
-    const modalImg = document.getElementById("modal-img");
-    const modalName = document.getElementById("modal-name");
-    const modalYear = document.getElementById("modal-year");
+  <script>
+    // Move script to module scope for better organization
+    function initializeModal() {
+      const toggleItems = document.querySelectorAll(".toggle");
+      const modal = document.getElementById("modal");
+      const closeModal = document.getElementById("close-modal");
+      const modalImg = document.getElementById("modal-img");
+      const modalName = document.getElementById("modal-name");
+      const modalYear = document.getElementById("modal-year");
 
-    const mobileBreakpoint = 425;
+      const mobileBreakpoint = 425;
 
-    // Function to check if the screen is larger than mobileBreakpoint
-    function isDesktop() {
-      return window.innerWidth > mobileBreakpoint;
-    }
-
-    // Open modal and set correct image when clicking the image
-    toggleItems.forEach((item) => {
-      if (!isDesktop()) {
-        return;
+      function isDesktop() {
+        return window.innerWidth > mobileBreakpoint;
       }
 
-      item.addEventListener("click", () => {
-        const imageUrl = item.getAttribute("data-url");
-        const imageAlt = item.getAttribute("data-name");
-        const imageYear = item.getAttribute("data-year");
+      function openModal(imageUrl: string, imageAlt: string, imageYear: string) {
+        if (!modal || !modalImg || !modalName || !modalYear) return;
 
-        // Ensure all necessary attributes are present
-        if (imageUrl && imageAlt && modalImg && modalName && modalYear) {
-          // Set the modal image src and alt dynamically
-          modalImg.setAttribute("src", imageUrl);
-          modalImg.setAttribute("alt", imageAlt);
+        modalImg.setAttribute("src", imageUrl);
+        modalImg.setAttribute("alt", imageAlt);
+        modalName.textContent = imageAlt;
+        modalYear.textContent = imageYear;
 
-          // Update modal content
-          modalName.textContent = imageAlt;
-          modalYear.textContent = imageYear;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
 
-          // Show the modal
-          modal?.classList.remove("hidden");
-          document.body.style.overflow = "hidden"; // Disable background scrolling
-        } else {
-          console.error("Image URL, name, or year is missing.");
+      function closeModalHandler() {
+        if (!modal) return;
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Initialize click handlers for all images
+      toggleItems.forEach((item) => {
+        if (!isDesktop()) return;
+
+        item.addEventListener("click", () => {
+          const imageUrl = item.getAttribute("data-url");
+          const imageAlt = item.getAttribute("data-name");
+          const imageYear = item.getAttribute("data-year");
+
+          if (!imageUrl || !imageAlt || !imageYear) {
+            console.error("Missing image attributes");
+            return;
+          }
+
+          openModal(imageUrl, imageAlt, imageYear);
+        });
+      });
+
+      // Close modal handlers
+      closeModal?.addEventListener("click", closeModalHandler);
+
+      modal?.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModalHandler();
         }
       });
-    });
 
-    // Close modal when clicking the close button
-    closeModal?.addEventListener("click", () => {
-      modal?.classList.add("hidden");
-      document.body.style.overflow = "auto"; // Re-enable background scrolling
-    });
+      // Escape key handler
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+          closeModalHandler();
+        }
+      });
+    }
 
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // Re-enable background scrolling
-      }
-    });
+    // Initialize as soon as the DOM is ready
+    document.addEventListener("DOMContentLoaded", initializeModal);
 
-    // Close modal with the Esc key
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !modal?.classList.contains("hidden")) {
-        modal?.classList.add("hidden");
-        document.body.style.overflow = "auto"; // Re-enable background scrolling
-      }
-    });
+    // Re-initialize when Astro view transitions complete
+    document.addEventListener("astro:page-load", initializeModal);
   </script>
 </Layout>
