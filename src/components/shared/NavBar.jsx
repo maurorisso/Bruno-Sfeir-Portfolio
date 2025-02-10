@@ -16,7 +16,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex justify-between bg-slate-800/95 backdrop-blur-sm text-white p-4 sticky top-0 z-10 border-b border-slate-700">
+    <div className="flex justify-between items-center bg-slate-800/95 backdrop-blur-sm text-white p-2 sticky top-0 z-10 border-b border-slate-700">
       <a
         href="/"
         className="cursor-pointer text-3xl font-semibold tracking-wide hover:text-slate-200 transition-colors"
@@ -60,9 +60,7 @@ const NavBar = () => {
               duration-200
               ease-in-out
               text-sm
-              p-3
-              md:py-1
-              md:px-4
+              p-2
               font-medium
               tracking-wide
               block
