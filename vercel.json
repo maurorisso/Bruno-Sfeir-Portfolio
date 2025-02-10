@@ -1,12 +1,1 @@
-{
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "installCommand": "npm install --no-audit --prefer-offline",
-        "buildCommand": "npm run build"
-      }
-    }
-  ]
-} 
+ 
