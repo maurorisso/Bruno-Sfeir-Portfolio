@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "vercel-build": "npm cache clean --force && npm install && npm run build"
+    "vercel-build": "npm cache clean --force && rm -rf node_modules && npm install --no-audit --prefer-offline && npm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.1",
@@ -31,5 +31,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "aria-query": "^5.3.0"
   }
 }
