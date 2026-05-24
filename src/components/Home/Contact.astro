@@ -50,7 +50,7 @@
 
       const form = event.target;
       const formData = new FormData(form);
-      const url = "https://formsubmit.co/ajax/contact@brunosfeir.com"; // Your FormSubmit URL
+      const url = "https://formsubmit.co/ajax/brunosfeir.art@gmail.com"; // Your FormSubmit URL
 
       // Update button text and disable it to indicate processing
       const submitButton = document.getElementById("submitButton");
@@ -74,7 +74,7 @@
             form.classList.add("hidden");
           } else {
             showResponseMessage(
-              "An error occurred. Please contact Bruno directly at contact@brunosfeir.com",
+              "An error occurred. Please contact Bruno directly at brunosfeir.art@gmail.com",
               false
             );
           }
@@ -83,7 +83,7 @@
         .catch((error) => {
           console.error("Error:", error);
           showResponseMessage(
-            "An error occurred. Please contact Bruno directly at contact@brunosfeir.com",
+            "An error occurred. Please contact Bruno directly at brunosfeir.art@gmail.com",
             false
           );
           resetButton();
